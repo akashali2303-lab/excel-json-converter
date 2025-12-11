@@ -1,57 +1,95 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef2f3;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
 .container {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     width: 90%;
     max-width: 600px;
     text-align: center;
 }
 
-.upload-box {
-    margin: 20px 0;
+h1 { margin-bottom: 0.5rem; color: #333; }
+p { color: #666; margin-bottom: 1.5rem; }
+
+/* Drag and Drop Zone Styles */
+.drop-zone {
+    max-width: 100%;
+    height: 150px;
+    padding: 25px;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #cccccc;
+    border: 3px dashed #cccccc;
+    border-radius: 10px;
+    transition: all 0.3s;
+    position: relative;
+    background-color: #fafafa;
 }
 
-input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* State when hovering with a file */
+.drop-zone--over {
+    border-style: solid;
+    border-color: #28a745;
+    background-color: #e9f7ef;
+    color: #28a745;
 }
 
+.drop-zone__input { display: none; }
+
+.file-name {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #333;
+    height: 20px;
+}
+
+/* Buttons */
 button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.1s;
 }
 
-button:hover { background-color: #218838; }
+button:active { transform: scale(0.98); }
+
+#convertBtn {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+#convertBtn:hover { background-color: #218838; }
 
 textarea {
     width: 100%;
     height: 300px;
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: monospace;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
     resize: none;
+    box-sizing: border-box; 
+    background-color: #f8f9fa;
 }
 
 .hidden { display: none; }
@@ -59,8 +97,18 @@ textarea {
 .actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 15px;
+    gap: 10px;
 }
 
+.btn { flex: 1; color: white; }
 .download-btn { background-color: #007bff; }
+.download-btn:hover { background-color: #0069d9; }
+
 .copy-btn { background-color: #6c757d; }
+.copy-btn:hover { background-color: #5a6268; }
+
+/* Class to add via JS when copied */
+.copy-success {
+    background-color: #28a745 !important;
+}
