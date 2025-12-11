@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to JSON Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Excel to JSON</h1>
+        <p>Upload an .xlsx or .xls file to convert it.</p>
+
+        <div class="upload-box">
+            <input type="file" id="fileInput" accept=".xlsx, .xls">
+            <button id="convertBtn" onclick="convertFile()">Convert</button>
+        </div>
+
+        <div id="status"></div>
+
+        <div id="resultArea" class="hidden">
+            <div class="actions">
+                <button onclick="downloadJson()" class="download-btn">Download JSON</button>
+                <button onclick="copyToClipboard()" class="copy-btn">Copy Data</button>
+            </div>
+            <textarea id="jsonOutput" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
