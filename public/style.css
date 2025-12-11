@@ -21,7 +21,7 @@ body {
 h1 { margin-bottom: 0.5rem; color: #333; }
 p { color: #666; margin-bottom: 1.5rem; }
 
-/* Drag and Drop Zone Styles */
+/* Drag and Drop Zone */
 .drop-zone {
     max-width: 100%;
     height: 150px;
@@ -37,13 +37,10 @@ p { color: #666; margin-bottom: 1.5rem; }
     border: 3px dashed #cccccc;
     border-radius: 10px;
     transition: all 0.3s;
-    position: relative;
     background-color: #fafafa;
 }
 
-/* State when hovering with a file */
 .drop-zone--over {
-    border-style: solid;
     border-color: #28a745;
     background-color: #e9f7ef;
     color: #28a745;
@@ -108,7 +105,12 @@ textarea {
 .copy-btn { background-color: #6c757d; }
 .copy-btn:hover { background-color: #5a6268; }
 
-/* Class to add via JS when copied */
-.copy-success {
-    background-color: #28a745 !important;
+.copy-success { background-color: #28a745 !important; }
+
+/* New Reset Button Style */
+.reset-btn {
+    margin-top: 15px;
+    background-color: #dc3545; /* Red color */
+    width: 100%;
 }
+.reset-btn:hover { background-color: #c82333; }

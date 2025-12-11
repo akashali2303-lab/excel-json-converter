@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel to JSON Converter</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for a better look -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,13 +13,11 @@
         <h1>Excel to JSON</h1>
         <p>Drag & drop your file here, or click to select.</p>
 
-        <!-- The New Drag and Drop Zone -->
         <div class="drop-zone" id="dropZone">
             <span class="drop-zone__prompt">Drop file here or click to upload</span>
             <input type="file" name="file" id="fileInput" class="drop-zone__input" accept=".xlsx, .xls">
         </div>
 
-        <!-- Selected File Name Display -->
         <div id="fileName" class="file-name"></div>
 
         <button id="convertBtn" onclick="convertFile()">Convert Now</button>
@@ -32,7 +29,11 @@
                 <button onclick="downloadJson()" class="btn download-btn">Download JSON</button>
                 <button id="copyBtn" onclick="copyToClipboard()" class="btn copy-btn">Copy Data</button>
             </div>
+            
             <textarea id="jsonOutput" readonly></textarea>
+
+            <!-- LEVEL 1 OPTION 3: Start Over Button -->
+            <button onclick="resetApp()" class="btn reset-btn">Start Over</button>
         </div>
     </div>
 
